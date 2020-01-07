@@ -1,0 +1,69 @@
+<template lang="pug">
+.loading-box
+  img.loading(src="@|loading.gif|")
+  .num
+</template>
+
+<script>
+  module.exports = {
+    data: {
+      imgList: [
+        '@|page1-1.png|',
+        '@|page1-2.png|',
+        '@|page1-3.png|',
+        '@|page1-4.png|',
+        '@|page1-5.png|',
+        '@|page1-6.png|',
+      ]
+    },
+    show: function () {
+      const mum = owo.query('.num')[0]
+      this.preloadImages(this.data.imgList, (e) => {
+        setTimeout(() => {
+          owo.go('page1', '', '', '', '', true)
+        }, 800)
+      }, (num) => {
+        mum.innerHTML = num + '%'
+      })
+    },
+    preloadImage: function (src, successFn) {
+      var image = new Image()
+      image.src = src
+      image.onload = function () {
+        successFn && successFn(src)
+      }
+      image.onerror = function (error) {
+        successFn && successFn(src)
+      }
+    },
+    preloadImages: function (srcs, doneFn, progressFn) {
+      if (!Array.isArray(srcs)) {
+        console.log('第一个参数只能是一个数组')
+      } else {
+        var allCount = srcs.length
+        var doneCount = 0
+        srcs.forEach((srcItem) => {
+          this.preloadImage(srcItem, function () {
+            doneCount++
+            progressFn && progressFn(Math.ceil(100 * doneCount / allCount))
+            if (doneCount === allCount) {
+              doneFn && doneFn()
+            }
+          })
+        })
+      }
+    }
+  }
+</script>
+
+
+<style lang="less">
+.loading {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -10%;
+  bottom: 0;
+  margin: auto;
+}
+</style>

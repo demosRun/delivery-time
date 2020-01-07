@@ -1,0 +1,84 @@
+<template lang="pug">
+.page1
+  .scale-box
+    img.so-1(src="@|page1-1.png|")
+    img.so-2(src="@|page1-2.png|")
+    img.so-6(src="@|page1-6.png|")
+    img.so-4(src="@|page1-4.png|" o-tap="selectProvince()")
+    img.so-5(src="@|page1-5.png|" o-tap="owo.go('page2', '', '', '', '', true)")
+    img.so-3(src="@|page1-3.png|" o-tap="owo.go('page2', '', '', '', '', true)")
+    .blinker-box
+      img.so-2-1(src="@|page1-1-1.png|")
+      img.so-2-2(src="@|page1-1-2.png|")
+</template>
+
+<script>
+  module.exports = {
+    created: function () {
+
+    },
+    selectProvince: function () {
+      
+    }
+  }
+</script>
+
+
+<style lang="less">
+.so-1 {
+  position: absolute;
+  left: 0px;
+  z-index: 1;
+  top: 45px
+}
+.so-2 {
+  position: absolute;
+  left: 139px;
+  z-index: 2;
+  top: 483px
+}
+.so-6 {
+  position: absolute;
+  left: 227px;
+  z-index: 6;
+  top: 812px
+}
+.so-4 {
+  position: absolute;
+  left: 194px;
+  z-index: 4;
+  top: 916px
+}
+.so-5 {
+  position: absolute;
+  left: 425px;
+  z-index: 5;
+  top: 886px
+}
+.so-3 {
+  position: absolute;
+  left: 160px;
+  z-index: 3;
+  top: 1068px
+}
+.blinker-box {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 6;
+}
+.so-2-1 {
+  position: absolute;
+  left: 17px;
+  z-index: 1;
+  top: 116px
+}
+.so-2-2 {
+  position: absolute;
+  left: 320px;
+  z-index: 2;
+  top: 1259px
+}
+ 
+</style>

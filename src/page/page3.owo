@@ -1,0 +1,17 @@
+<template lang="pug">
+.page3
+  .scale-box sadsddddddddddddddddddddd
+</template>
+
+<script>
+  module.exports = {
+    created: function () {
+
+    }
+  }
+</script>
+
+
+<style lang="less">
+
+</style>
