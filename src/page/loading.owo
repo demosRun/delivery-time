@@ -1,19 +1,24 @@
 <template lang="pug">
 .loading-box
   img.loading(src="@|loading.gif|")
-  .num
+  //- .num
 </template>
 
 <script>
   module.exports = {
     data: {
       imgList: [
+        '@|text.png|',
         '@|page1-1.png|',
         '@|page1-2.png|',
         '@|page1-3.png|',
         '@|page1-4.png|',
         '@|page1-5.png|',
         '@|page1-6.png|',
+        '@|backhome.png|',
+        '@|no-image.png|',
+        '@|page1-1-1.png|',
+        '@|page1-1-2.png|',
       ]
     },
     show: function () {
@@ -23,7 +28,7 @@
           owo.go('page1', '', '', '', '', true)
         }, 800)
       }, (num) => {
-        mum.innerHTML = num + '%'
+        // mum.innerHTML = num + '%'
       })
     },
     preloadImage: function (src, successFn) {

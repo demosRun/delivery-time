@@ -4,21 +4,26 @@ body, html, .owo {
   padding: 0;
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
+  
   user-select: text;
   font: normal 12px/180% "SimSun";
   -webkit-overflow-scrolling: touch;
   position: relative;
 }
+
 html {
   background-color: white;
   background-repeat: no-repeat;
   background-position: center top;
   background-size: cover;
+  overflow: hidden;
 }
 h1, h2, h3, h4, h5, input {
   margin: 0;
   padding: 0;
+}
+body {
+  overflow: hidden;
 }
 ul, li {
   list-style-type: none;

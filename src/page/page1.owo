@@ -2,23 +2,148 @@
 .page1
   .scale-box
     img.so-1(src="@|page1-1.png|")
-    img.so-2(src="@|page1-2.png|")
+    img.so-2.main-text(src="@|page1-2.png|")
     img.so-6(src="@|page1-6.png|")
-    img.so-4(src="@|page1-4.png|" o-tap="selectProvince()")
-    img.so-5(src="@|page1-5.png|" o-tap="owo.go('page2', '', '', '', '', true)")
-    img.so-3(src="@|page1-3.png|" o-tap="owo.go('page2', '', '', '', '', true)")
-    .blinker-box
+    .select-box.so-4
+      img(src="@|page1-4.png|" o-tap="selectProvince()")
+    img.so-5(src="@|page1-5.png|")
+    img.so-3(src="@|page1-3.png|" o-tap="random")
+    img.text(src="@|text.png|")
+    .blinker-box(o-show="this.data.showBlinker")
       img.so-2-1(src="@|page1-1-1.png|")
-      img.so-2-2(src="@|page1-1-2.png|")
+      img.so-2-2(src="@|page1-1-2.png|" o-tap="hideProvince")
+      ul.city-box.clear
+        li(o-tap="goTwo")
+          h1 北京
+          img(src="@|page-2.jpg|")
+        li
+          h1 安徽
+        li
+          h1 四川
+        li
+          h1 天津
+        li
+          h1 福建
+        li
+          h1 贵州
+        li
+          h1 河北
+        li
+          h1 江西
+        li
+          h1 云南
+          img(src="@|page-2.jpg|")
+        li
+          h1 山西
+        li
+          h1 山东
+        li
+          h1 西藏
+        li
+          h1 内蒙古
+        li
+          h1 河南
+        li
+          h1 陕西
+        li
+          h1 辽宁
+        li
+          h1 湖北
+          img(src="@|page-2.jpg|")
+        li
+          h1 甘肃
+        li
+          h1 吉林
+        li
+          h1 湖南
+        li
+          h1 青海
+        li
+          h1 黑龙江
+        li
+          h1 广东
+        li
+          h1 宁夏
+        li
+          h1 上海
+          img(src="@|page-2.jpg|")
+        li
+          h1 广西
+        li
+          h1 新疆
+        li
+          h1 江苏
+        li
+          h1 海南
+        li
+          h1 深圳
+        li
+          h1 浙江
+        li
+          h1 重庆
 </template>
 
 <script>
   module.exports = {
+    data: {
+      showBlinker: false
+    },
     created: function () {
-
+      owo.tool.animate('pulse', owo.query('.main-text')[0], 1000)
+      // 检查没有插图片的
+      // 未交卷
+      const list = owo.query('.city-box li')
+      list.forEach(element => {
+        const image = element.getElementsByTagName('img')[0]
+        if (image && image.src && image.src != '') {
+          element.classList.add('use-image')
+        } else {
+          element.classList.add('no-image')
+        }
+      })
     },
     selectProvince: function () {
-      
+      owo.tool.change(this, {
+        showBlinker: true
+      })
+    },
+    hideProvince: function () {
+      owo.tool.change(this, {
+        showBlinker: false
+      })
+    },
+    goTwo: function (e) {
+      document.getElementsByClassName('auto-image')[0].src = this.$target.getElementsByTagName('img')[0].src
+      console.log(this.$target.getElementsByTagName('img'))
+      owo.go('page2', 'scaleDown', 'moveFromRight', 'scaleDown', 'moveFromLeft', true)
+      setTimeout(() => {
+        this.hideProvince()
+      }, 1000)
+    },
+    random: function (e) {
+      function randomNum(minNum,maxNum){ 
+        switch(arguments.length) { 
+          case 1: 
+            return parseInt(Math.random()*minNum + 1, 10); 
+            break; 
+          case 2: 
+            return parseInt(Math.random()*(maxNum-minNum+1)+minNum,10); 
+            break; 
+          default: 
+            return 0; 
+            break; 
+        } 
+      } 
+      // 取出插入图片的列表
+      const list = owo.query('.city-box .use-image')
+      const imageSrc = list[randomNum(0, list.length - 1)]
+      console.log(list.length)
+      // 跳转到随即目录
+      document.getElementsByClassName('auto-image')[0].src = imageSrc.getElementsByTagName('img')[0].src
+      owo.go('page2', 'scaleDown', 'moveFromRight', 'scaleDown', 'moveFromLeft', true)
+      setTimeout(() => {
+        this.hideProvince()
+      }, 1000)
     }
   }
 </script>
@@ -45,15 +170,31 @@
 }
 .so-4 {
   position: absolute;
-  left: 194px;
+  left: 164px;
   z-index: 4;
-  top: 916px
+  top: 934px;
+  width: 261px;
+  height: 95px;
+  img {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  }
 }
 .so-5 {
   position: absolute;
   left: 425px;
   z-index: 5;
-  top: 886px
+  top: 931px;
+}
+.text {
+  z-index: 1;
+  position:  fixed;
+  bottom: 7%;
+  right: 4%;
 }
 .so-3 {
   position: absolute;
@@ -80,5 +221,49 @@
   z-index: 2;
   top: 1259px
 }
- 
+.city-box {
+  position: absolute;
+  z-index: 9;
+  width: 600px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 14%;
+  height: 64%;
+  li {
+    display: block;
+    float: left;
+    width: 33%;
+    text-align: center;
+    line-height: 80px;
+    font-size: 22px;
+    height: 95px;
+    overflow: hidden;
+    h1 {
+      font-weight: normal;
+      user-select: none;
+      pointer-events: none;
+    }
+    img {
+      display: none;
+      user-select: none;
+      pointer-events: none;
+    }
+  }
+  :nth-child(3n) {
+    border-right: none;
+  }
+}
+.no-image {
+  user-select: none;
+  pointer-events: none;
+  color: #999;
+  background-repeat: no-repeat;
+  background-image: url('@|no-image.png|');
+  background-position: center 55px;
+  h1 {
+    font-size: 30px;
+    line-height: 66px;
+  }
+}
 </style>

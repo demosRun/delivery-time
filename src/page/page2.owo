@@ -1,17 +1,59 @@
 <template lang="pug">
-.page1
-  .scale-box sadsddddddddddddddddddddd
+.page2
+  .image-box
+    img.auto-image()
+    .press
+    .backhome(o-tap="gohome" o-animation="shrink")
 </template>
 
 <script>
   module.exports = {
     created: function () {
-
+      // 判断是否有图片
+      const imageSrc = this.$el.getElementsByClassName('auto-image')[0].src
+      // console.log(imageSrc)
+      if (imageSrc == '') {
+        owo.tool.toast('无对应数据，请重试!')
+        owo.go('page1', '', '', '', '', true)
+      }
+    },
+    gohome: function () {
+      owo.go('page1', '', '', '', '', true)
     }
   }
 </script>
 
 
 <style lang="less">
-
+.page2 {
+  overflow: auto;
+}
+img {
+  width: 100%;
+  height: auto;
+}
+.press {
+  width: 34vw;
+  height: 8vw;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-image: url('@|press.png|');
+  position: fixed;
+  bottom: 7vw;
+  left: 10%;
+  pointer-events: none;
+}
+.image-box {
+  position: relative;
+}
+.backhome {
+  width: 37vw;
+  height: 13vw;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-image: url('@|backhome.png|');
+  position: absolute;
+  bottom: 7vw;
+  right: 5%;
+}
 </style>
