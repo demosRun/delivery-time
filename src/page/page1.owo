@@ -211,15 +211,18 @@
 }
 .so-2-1 {
   position: absolute;
-  left: 17px;
   z-index: 1;
-  top: 116px
+  top: 116px;
+  width: 93%;
+  left: 0;
+  right: 0;
+  margin: auto;
 }
 .so-2-2 {
   position: absolute;
   left: 320px;
   z-index: 2;
-  top: 1259px
+  top: 1220px
 }
 .city-box {
   position: absolute;
@@ -237,7 +240,7 @@
     text-align: center;
     line-height: 80px;
     font-size: 22px;
-    height: 95px;
+    height: 89px;
     overflow: hidden;
     h1 {
       font-weight: normal;
