@@ -1,19 +1,19 @@
 <template lang="pug">
 .page1
   .scale-box
-    img.so-1(src="@|page1-1.png|")
-    img.so-2.main-text(src="@|page1-2.png|")
-    img.so-6(src="@|page1-6.png|")
-    .select-box.so-4
+    img.so-1(src="@|page1-1.jpg|")
+    img.so-2.main-text(src="@|page1-2.png|" o-animation="float")
+    //- img.so-6(src="@|page1-6.png|")
+    .select-box.so-4(o-animation="shrink")
       img(src="@|page1-4.png|" o-tap="selectProvince()")
-    img.so-5(src="@|page1-5.png|")
-    img.so-3(src="@|page1-3.png|" o-tap="random")
+    img.so-5(src="@|page1-5.png|" o-tap="selectProvince()")
+    //- img.so-3(src="@|page1-3.png|" o-tap="random")
     img.text(src="@|text.png|")
     .blinker-box(o-show="this.data.showBlinker")
       img.so-2-1(src="@|page1-1-1.png|")
       img.so-2-2(src="@|page1-1-2.png|" o-tap="hideProvince")
       ul.city-box.clear
-        li(o-tap="goTwo")
+        li
           h1 北京
           img(src="@|page-2.jpg|")
         li
@@ -89,7 +89,7 @@
       showBlinker: false
     },
     created: function () {
-      owo.tool.animate('pulse', owo.query('.main-text')[0], 1000)
+      // owo.tool.animate('pulse', owo.query('.main-text')[0], 1000)
       // 检查没有插图片的
       // 未交卷
       const list = owo.query('.city-box li')
@@ -97,8 +97,10 @@
         const image = element.getElementsByTagName('img')[0]
         if (image && image.src && image.src != '') {
           element.classList.add('use-image')
+          element.setAttribute('o-tap', "goTwo")
         } else {
           element.classList.add('no-image')
+          
         }
       })
     },
@@ -113,9 +115,15 @@
       })
     },
     goTwo: function (e) {
+      window.scrollTo(0,0)
+      document.getElementsByClassName('page2')[0].scrollTo(0,0)
       document.getElementsByClassName('auto-image')[0].src = this.$target.getElementsByTagName('img')[0].src
+      document.getElementsByClassName('auto-image')[0].style.height = 0
+      setTimeout(() => {
+        document.getElementsByClassName('auto-image')[0].style.height = 'auto'
+      }, 100)
       console.log(this.$target.getElementsByTagName('img'))
-      owo.go('page2', 'scaleDown', 'moveFromRight', 'scaleDown', 'moveFromLeft', true)
+      owo.go('page2', 'scaleDown', 'moveFromRight', 'scaleDown', 'moveFromLeft')
       setTimeout(() => {
         this.hideProvince()
       }, 1000)
@@ -193,7 +201,7 @@
 .text {
   z-index: 1;
   position:  fixed;
-  bottom: 7%;
+  bottom: 14%;
   right: 4%;
 }
 .so-3 {
@@ -212,8 +220,8 @@
 .so-2-1 {
   position: absolute;
   z-index: 1;
-  top: 116px;
-  width: 93%;
+  top: 12%;
+  width: 80%;
   left: 0;
   right: 0;
   margin: auto;
@@ -222,7 +230,8 @@
   position: absolute;
   left: 320px;
   z-index: 2;
-  top: 1220px
+  top: 1130px;
+  z-index: 19;
 }
 .city-box {
   position: absolute;
@@ -231,7 +240,7 @@
   left: 0;
   right: 0;
   margin: auto;
-  top: 14%;
+  top: 17%;
   height: 64%;
   li {
     display: block;
@@ -240,7 +249,7 @@
     text-align: center;
     line-height: 80px;
     font-size: 22px;
-    height: 89px;
+    height: 77px;
     overflow: hidden;
     h1 {
       font-weight: normal;

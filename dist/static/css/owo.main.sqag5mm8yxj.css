@@ -54,6 +54,37 @@ li {
   bottom: 0;
   margin: auto;
 }
+.owo-animation-float {
+  -webkit-animation: float 3s linear infinite;
+  animation: float 3s linear infinite;
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
+}
+
+@-webkit-keyframes float {
+  0% { -webkit-transform: translateY(-2vh); transform: translateY(-2vh);}
+  50% {-webkit-transform: translateY(-4vh);transform: translateY(-4vh);}
+  100% {-webkit-transform: translateY(-2vh);transform: translateY(-2vh);}
+}
+
+@keyframes float {
+  0% { -webkit-transform: translateY(-2vh); transform: translateY(-2vh);}
+  50% {-webkit-transform: translateY(-4vh);transform: translateY(-4vh);}
+  100% {-webkit-transform: translateY(-2vh);transform: translateY(-2vh);}
+}
+.owo-animation-shrink {
+  -webkit-animation: shrink 1s linear alternate infinite;
+  animation: shrink 1s linear alternate infinite;
+}
+@-webkit-keyframes shrink{
+  0%{-webkit-transform:scale(0.9);}
+  100%{-webkit-transform:scale(1);}
+}
+@keyframes shrink{
+  0%{-webkit-transform:scale(0.9);transform:scale(0.9);}
+  100%{-webkit-transform:scale(1);transform:scale(1);}
+}
+
 .page1 .so-1 {
   position: absolute;
   left: 0px;
@@ -103,7 +134,7 @@ li {
 .page1 .text {
   z-index: 1;
   position: fixed;
-  bottom: 7%;
+  bottom: 14%;
   right: 4%;
 }
 
@@ -125,8 +156,8 @@ li {
 .page1 .so-2-1 {
   position: absolute;
   z-index: 1;
-  top: 116px;
-  width: 93%;
+  top: 12%;
+  width: 80%;
   left: 0;
   right: 0;
   margin: auto;
@@ -136,7 +167,8 @@ li {
   position: absolute;
   left: 320px;
   z-index: 2;
-  top: 1220px;
+  top: 1130px;
+  z-index: 19;
 }
 
 .page1 .city-box {
@@ -146,7 +178,7 @@ li {
   left: 0;
   right: 0;
   margin: auto;
-  top: 14%;
+  top: 17%;
   height: 64%;
 }
 
@@ -157,7 +189,7 @@ li {
   text-align: center;
   line-height: 80px;
   font-size: 22px;
-  height: 89px;
+  height: 77px;
   overflow: hidden;
 }
 
@@ -198,19 +230,7 @@ li {
 .page1 .no-image h1 {
   font-size: 30px;
   line-height: 66px;
-}.owo-animation-shrink {
-  -webkit-animation: shrink 1s linear alternate infinite;
-  animation: shrink 1s linear alternate infinite;
 }
-@-webkit-keyframes shrink{
-  0%{-webkit-transform:scale(0.9);}
-  100%{-webkit-transform:scale(1);}
-}
-@keyframes shrink{
-  0%{-webkit-transform:scale(0.9);transform:scale(0.9);}
-  100%{-webkit-transform:scale(1);transform:scale(1);}
-}
-
 .page2 {
   overflow: auto;
 }
