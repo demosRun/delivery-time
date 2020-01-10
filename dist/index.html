@@ -1,322 +1,192 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+  <head>
+    <title>{TAG_14226_TAG}</title>
+    <!-- 页面的元信息 -->
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no, email=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="white"/>
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="filetype" content="1"/>
+    <meta name="publishedtype" content="1"/>
+    <meta name="pagetype" content="2"/>
+    <meta name="screen-orientation" content="landscape"/>
+    <meta name="x5-orientation" content="landscape"/>
+    <meta name="full-screen" content="yes"/>
+    <meta name="x5-fullscreen" content="true"/>
+    <meta name="browsermode" content="application"/>
+    <meta name="x5-page-mode" content="app"/>
+    
+      <!-- 页面主样式文件 -->
+      <link charset="utf-8"  rel="stylesheet" href="./static/css/owo.main.css">
+      
+    <!-- 附属css文件 -->
+    <link rel="stylesheet" href="./static/css/main.css" charset="utf-8">
+    <link rel="stylesheet" href="./static/css/swiper4.5.0.css" charset="utf-8">
+      
+  </head>
+  <body>
+    <!-- 页面区域 -->
+    <!-- 页面[loading]-->
+    <div class="loading-box owo" template="loading" style="display: none;"><img class="loading" src="./static/resource/loading.gif"></div>
+    <!-- 页面[page1]-->
+    <div class="page1 owo" template="page1" style="display: none;"><div class="scale-box"><img class="so-1" src="./static/resource/page1-1.jpg"><img class="so-2 main-text owo-animation-float" src="./static/resource/page1-2.png" o-animation="float"><div class="select-box so-4 owo-animation-shrink" o-animation="shrink"><img src="./static/resource/page1-4.png" o-tap="selectProvince()"></div><img class="so-5" src="./static/resource/page1-5.png" o-tap="selectProvince()"><img class="text" src="./static/resource/text.png"><div class="blinker-box" o-show="this.data.showBlinker"><img class="so-2-1" src="./static/resource/page1-1-1.png"><img class="so-2-2" src="./static/resource/page1-1-2.png" o-tap="hideProvince"><ul class="city-box clear"><li><h1>北京</h1><img src="./static/resource/page-2.jpg"></li><li><h1>安徽</h1></li><li><h1>四川</h1></li><li><h1>天津</h1></li><li><h1>福建</h1></li><li><h1>贵州</h1></li><li><h1>河北</h1></li><li><h1>江西</h1></li><li><h1>云南</h1><img src="./static/resource/page-2.jpg"></li><li><h1>山西</h1></li><li><h1>山东</h1></li><li><h1>西藏</h1></li><li><h1>内蒙古</h1></li><li><h1>河南</h1></li><li><h1>陕西</h1></li><li><h1>辽宁</h1></li><li><h1>湖北</h1><img src="./static/resource/page-2.jpg"></li><li><h1>甘肃</h1></li><li><h1>吉林</h1></li><li><h1>湖南</h1></li><li><h1>青海</h1></li><li><h1>黑龙江</h1></li><li><h1>广东</h1></li><li><h1>宁夏</h1></li><li><h1>上海</h1><img src="./static/resource/page-2.jpg"></li><li><h1>广西</h1></li><li><h1>新疆</h1></li><li><h1>江苏</h1></li><li><h1>海南</h1></li><li><h1>深圳</h1></li><li><h1>浙江</h1></li><li><h1>重庆</h1></li></ul></div></div></div>
+    <!-- 页面[page2]-->
+    <div class="page2 owo" template="page2" style="display: none;"><div class="image-box"><img class="auto-image"><div class="press"></div><div class="backhome owo-animation-shrink" o-tap="gohome" o-animation="shrink"></div></div></div>
+    
 
-<head>
-  <title>{TAG_14226_TAG}</title>
-  <!-- 页面的元信息 -->
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
-  <meta name="format-detection" content="telephone=no, email=no" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="white" />
-  <meta name="renderer" content="webkit" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <meta name="filetype" content="1" />
-  <meta name="publishedtype" content="1" />
-  <meta name="pagetype" content="2" />
-  <meta name="screen-orientation" content="landscape" />
-  <meta name="x5-orientation" content="landscape" />
-  <meta name="full-screen" content="yes" />
-  <meta name="x5-fullscreen" content="true" />
-  <meta name="browsermode" content="application" />
-  <meta name="x5-page-mode" content="app" />
-
-  <!-- 页面主样式文件 -->
-  <link charset="utf-8" rel="stylesheet" href="./static/css/owo.main.9wdbdymyimg.css">
-
-  <!-- 附属css文件 -->
-  <link rel="stylesheet" href="./static/css/main.css" charset="utf-8">
-  <link rel="stylesheet" href="./static/css/swiper4.5.0.css" charset="utf-8">
-
-</head>
-
-<body>
-  <!-- 页面区域 -->
-  <!-- 页面[loading]-->
-  <div class="loading-box owo" template="loading" style="display: none;">
-    <img class="loading" src="./static/resource/loading.gif">
-  </div>
-  <!-- 页面[page1]-->
-  <div class="page1 owo" template="page1" style="display: none;">
-    <div class="scale-box">
-      <img class="so-1" src="./static/resource/page1-1.jpg">
-      <img class="so-2 main-text owo-animation-float" src="./static/resource/page1-2.png" o-animation="float">
-      <div class="select-box so-4 owo-animation-shrink" o-animation="shrink">
-        <img src="./static/resource/page1-4.png" o-tap="selectProvince()">
-      </div>
-      <img class="so-5" src="./static/resource/page1-5.png" o-tap="selectProvince()">
-      <img class="text" src="./static/resource/text.png">
-      <div class="blinker-box" o-show="this.data.showBlinker">
-        <img class="so-2-1" src="./static/resource/page1-1-1.png">
-        <img class="so-2-2" src="./static/resource/page1-1-2.png" o-tap="hideProvince">
-        <ul class="city-box clear">
-          <li>
-            <h1>北京</h1>
-            <img src="./static/resource/page-2.jpg">
-          </li>
-          <li>
-            <h1>安徽</h1>
-          </li>
-          <li>
-            <h1>四川</h1>
-          </li>
-          <li>
-            <h1>天津</h1>
-          </li>
-          <li>
-            <h1>福建</h1>
-          </li>
-          <li>
-            <h1>贵州</h1>
-          </li>
-          <li>
-            <h1>河北</h1>
-          </li>
-          <li>
-            <h1>江西</h1>
-          </li>
-          <li>
-            <h1>云南</h1>
-            <img src="./static/resource/page-2.jpg">
-          </li>
-          <li>
-            <h1>山西</h1>
-          </li>
-          <li>
-            <h1>山东</h1>
-          </li>
-          <li>
-            <h1>西藏</h1>
-          </li>
-          <li>
-            <h1>内蒙古</h1>
-          </li>
-          <li>
-            <h1>河南</h1>
-          </li>
-          <li>
-            <h1>陕西</h1>
-          </li>
-          <li>
-            <h1>辽宁</h1>
-          </li>
-          <li>
-            <h1>湖北</h1>
-            <img src="./static/resource/page-2.jpg">
-          </li>
-          <li>
-            <h1>甘肃</h1>
-          </li>
-          <li>
-            <h1>吉林</h1>
-          </li>
-          <li>
-            <h1>湖南</h1>
-          </li>
-          <li>
-            <h1>青海</h1>
-          </li>
-          <li>
-            <h1>黑龙江</h1>
-          </li>
-          <li>
-            <h1>广东</h1>
-          </li>
-          <li>
-            <h1>宁夏</h1>
-          </li>
-          <li>
-            <h1>上海</h1>
-            <img src="./static/resource/page-2.jpg">
-          </li>
-          <li>
-            <h1>广西</h1>
-          </li>
-          <li>
-            <h1>新疆</h1>
-          </li>
-          <li>
-            <h1>江苏</h1>
-          </li>
-          <li>
-            <h1>海南</h1>
-          </li>
-          <li>
-            <h1>深圳</h1>
-          </li>
-          <li>
-            <h1>浙江</h1>
-          </li>
-          <li>
-            <h1>重庆</h1>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <!-- 页面[page2]-->
-  <div class="page2 owo" template="page2" style="display: none;">
-    <div class="image-box">
-      <img class="auto-image">
-      <div class="press"></div>
-      <div class="backhome owo-animation-shrink" o-tap="gohome" o-animation="shrink"></div>
-    </div>
-  </div>
-
-
-  <script src="http://tools.people.com.cn/libs/jquery/1.11.1/jquery-1.11.1.min.js" type="text/javascript" charset="UTF-8"></script>
-  <script src="./static/js/swiper.4.5.0.js" type="text/javascript" charset="UTF-8"></script>
-  <script src="./static/js/main.js" type="text/javascript" charset="UTF-8"></script><!-- 框架script代码 -->
-  <!-- 框架script文件 -->
-  <script src="./static/js/owo.main.9wdbdymyimg.js" type="text/javascript" charset="UTF-8"></script>
-  <script>
-    /*
+    <script src="http://tools.people.com.cn/libs/jquery/1.11.1/jquery-1.11.1.min.js" type="text/javascript"  charset="UTF-8"></script>
+    <script src="./static/js/swiper.4.5.0.js" type="text/javascript"  charset="UTF-8"></script>
+    <script src="./static/js/main.js" type="text/javascript"  charset="UTF-8"></script><!-- 框架script代码 --><!-- 框架script文件 -->
+<script src="./static/js/owo.main.js" type="text/javascript" charset="UTF-8"></script>
+<script>/*
   存储每个页面的函数
   键名：页面名称
   键值：方法列表
 */
-    owo.phoneEnter = "null";
-    owo.script = {
-      "loading": {
-        "data": {
-          "imgList": ["./static/resource/text.png", "./static/resource/page1-1.png", "./static/resource/page1-2.png", "./static/resource/page1-3.png", "./static/resource/page1-4.png", "./static/resource/page1-5.png", "./static/resource/page1-6.png", "./static/resource/backhome.png", "./static/resource/no-image.png", "./static/resource/page1-1-1.png", "./static/resource/page1-1-2.png"]
-        },
-        "show": function show() {
-          var mum = owo.query('.num')[0];
-          this.preloadImages(this.data.imgList, function(e) {
-            setTimeout(function() {
-              owo.go('page1', '', '', '', '', true);
-            }, 2000);
-          }, function(num) { // mum.innerHTML = num + '%'
-          });
-        },
-        "preloadImage": function preloadImage(src, successFn) {
-          var image = new Image();
-          image.src = src;
+owo.phoneEnter = "null";
+owo.script = {
+  "loading": {
+    "data": {
+      "imgList": ["./static/resource/text.png", "./static/resource/page1-1.png", "./static/resource/page1-2.png", "./static/resource/page1-3.png", "./static/resource/page1-4.png", "./static/resource/page1-5.png", "./static/resource/page1-6.png", "./static/resource/backhome.png", "./static/resource/no-image.png", "./static/resource/page1-1-1.png", "./static/resource/page1-1-2.png"]
+    },
+    "show": function show() {
+      var mum = owo.query('.num')[0];
+      this.preloadImages(this.data.imgList, function (e) {
+        setTimeout(function () {
+          owo.go('page1', '', '', '', '', true);
+        }, 2000);
+      }, function (num) {// mum.innerHTML = num + '%'
+      });
+    },
+    "preloadImage": function preloadImage(src, successFn) {
+      var image = new Image();
+      image.src = src;
 
-          image.onload = function() {
-            successFn && successFn(src);
-          };
+      image.onload = function () {
+        successFn && successFn(src);
+      };
 
-          image.onerror = function(error) {
-            successFn && successFn(src);
-          };
-        },
-        "preloadImages": function preloadImages(srcs, doneFn, progressFn) {
-          var _this = this;
+      image.onerror = function (error) {
+        successFn && successFn(src);
+      };
+    },
+    "preloadImages": function preloadImages(srcs, doneFn, progressFn) {
+      var _this = this;
 
-          if (!Array.isArray(srcs)) {
-            console.log('第一个参数只能是一个数组');
-          } else {
-            var allCount = srcs.length;
-            var doneCount = 0;
-            srcs.forEach(function(srcItem) {
-              _this.preloadImage(srcItem, function() {
-                doneCount++;
-                progressFn && progressFn(Math.ceil(100 * doneCount / allCount));
+      if (!Array.isArray(srcs)) {
+        console.log('第一个参数只能是一个数组');
+      } else {
+        var allCount = srcs.length;
+        var doneCount = 0;
+        srcs.forEach(function (srcItem) {
+          _this.preloadImage(srcItem, function () {
+            doneCount++;
+            progressFn && progressFn(Math.ceil(100 * doneCount / allCount));
 
-                if (doneCount === allCount) {
-                  doneFn && doneFn();
-                }
-              });
-            });
-          }
-        }
-      },
-      "page1": {
-        "data": {
-          "showBlinker": false
-        },
-        "created": function created() {
-          // owo.tool.animate('pulse', owo.query('.main-text')[0], 1000)
-          // 检查没有插图片的
-          // 未交卷
-          var list = owo.query('.city-box li');
-          list.forEach(function(element) {
-            var image = element.getElementsByTagName('img')[0];
-
-            if (image && image.src && image.src != '') {
-              element.classList.add('use-image');
-              element.setAttribute('o-tap', "goTwo");
-            } else {
-              element.classList.add('no-image');
+            if (doneCount === allCount) {
+              doneFn && doneFn();
             }
           });
-        },
-        "selectProvince": function selectProvince() {
-          owo.tool.change(this, {
-            showBlinker: true
-          });
-        },
-        "hideProvince": function hideProvince() {
-          owo.tool.change(this, {
-            showBlinker: false
-          });
-        },
-        "goTwo": function goTwo(e) {
-          var _this2 = this;
-
-          window.scrollTo(0, 0);
-          document.getElementsByClassName('page2')[0].scrollTo(0, 0);
-          document.getElementsByClassName('auto-image')[0].src = this.$target.getElementsByTagName('img')[0].src;
-          document.getElementsByClassName('auto-image')[0].style.height = 0;
-          setTimeout(function() {
-            document.getElementsByClassName('auto-image')[0].style.height = 'auto';
-          }, 100);
-          console.log(this.$target.getElementsByTagName('img'));
-          owo.go('page2', 'scaleDown', 'moveFromRight', 'scaleDown', 'moveFromLeft');
-          setTimeout(function() {
-            _this2.hideProvince();
-          }, 1000);
-        },
-        "random": function random(e) {
-          var _this3 = this;
-
-          function randomNum(minNum, maxNum) {
-            switch (arguments.length) {
-              case 1:
-                return parseInt(Math.random() * minNum + 1, 10);
-                break;
-
-              case 2:
-                return parseInt(Math.random() * (maxNum - minNum + 1) + minNum, 10);
-                break;
-
-              default:
-                return 0;
-                break;
-            }
-          } // 取出插入图片的列表
-
-
-          var list = owo.query('.city-box .use-image');
-          var imageSrc = list[randomNum(0, list.length - 1)];
-          console.log(list.length); // 跳转到随即目录
-
-          document.getElementsByClassName('auto-image')[0].src = imageSrc.getElementsByTagName('img')[0].src;
-          owo.go('page2', 'scaleDown', 'moveFromRight', 'scaleDown', 'moveFromLeft', true);
-          setTimeout(function() {
-            _this3.hideProvince();
-          }, 1000);
-        }
-      },
-      "page2": {
-        "created": function created() {
-          // 判断是否有图片
-          var imageSrc = this.$el.getElementsByClassName('auto-image')[0].src; // console.log(imageSrc)
-
-          if (imageSrc == '') {
-            owo.tool.toast('无对应数据，请重试!');
-            owo.go('page1', 'scaleDown', 'moveFromLeft', 'scaleDown', 'moveFromRight', true);
-          }
-        },
-        "gohome": function gohome() {
-          owo.script.page1.data.showBlinker = true;
-          owo.go('page1', 'scaleDown', 'moveFromLeft', 'scaleDown', 'moveFromRight', true);
-        }
+        });
       }
-    };
-  </script>
-</body>
+    }
+  },
+  "page1": {
+    "data": {
+      "showBlinker": false
+    },
+    "created": function created() {
+      // owo.tool.animate('pulse', owo.query('.main-text')[0], 1000)
+      // 检查没有插图片的
+      // 未交卷
+      var list = owo.query('.city-box li');
+      list.forEach(function (element) {
+        var image = element.getElementsByTagName('img')[0];
 
+        if (image && image.src && image.src != '') {
+          element.classList.add('use-image');
+          element.setAttribute('o-tap', "goTwo");
+        } else {
+          element.classList.add('no-image');
+        }
+      });
+    },
+    "selectProvince": function selectProvince() {
+      owo.tool.change(this, {
+        showBlinker: true
+      });
+    },
+    "hideProvince": function hideProvince() {
+      owo.tool.change(this, {
+        showBlinker: false
+      });
+    },
+    "goTwo": function goTwo(e) {
+      var _this2 = this;
+
+      window.scrollTo(0, 0);
+      document.getElementsByClassName('page2')[0].scrollTo(0, 0);
+      document.getElementsByClassName('auto-image')[0].src = this.$target.getElementsByTagName('img')[0].src;
+      document.getElementsByClassName('auto-image')[0].style.height = 0;
+      setTimeout(function () {
+        document.getElementsByClassName('auto-image')[0].style.height = 'auto';
+      }, 100);
+      console.log(this.$target.getElementsByTagName('img'));
+      owo.go('page2', 'scaleDown', 'moveFromRight', 'scaleDown', 'moveFromLeft');
+      setTimeout(function () {
+        _this2.hideProvince();
+      }, 1000);
+    },
+    "random": function random(e) {
+      var _this3 = this;
+
+      function randomNum(minNum, maxNum) {
+        switch (arguments.length) {
+          case 1:
+            return parseInt(Math.random() * minNum + 1, 10);
+            break;
+
+          case 2:
+            return parseInt(Math.random() * (maxNum - minNum + 1) + minNum, 10);
+            break;
+
+          default:
+            return 0;
+            break;
+        }
+      } // 取出插入图片的列表
+
+
+      var list = owo.query('.city-box .use-image');
+      var imageSrc = list[randomNum(0, list.length - 1)];
+      console.log(list.length); // 跳转到随即目录
+
+      document.getElementsByClassName('auto-image')[0].src = imageSrc.getElementsByTagName('img')[0].src;
+      owo.go('page2', 'scaleDown', 'moveFromRight', 'scaleDown', 'moveFromLeft', true);
+      setTimeout(function () {
+        _this3.hideProvince();
+      }, 1000);
+    }
+  },
+  "page2": {
+    "created": function created() {
+      // 判断是否有图片
+      var imageSrc = this.$el.getElementsByClassName('auto-image')[0].src; // console.log(imageSrc)
+
+      if (imageSrc == '') {
+        owo.tool.toast('无对应数据，请重试!');
+        owo.go('page1', 'scaleDown', 'moveFromLeft', 'scaleDown', 'moveFromRight', true);
+      }
+    },
+    "gohome": function gohome() {
+      owo.script.page1.data.showBlinker = true;
+      owo.go('page1', 'scaleDown', 'moveFromLeft', 'scaleDown', 'moveFromRight', true);
+    }
+  }
+};</script>
+  </body>
 </html>
