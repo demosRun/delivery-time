@@ -14,7 +14,10 @@
       // console.log(imageSrc)
       if (imageSrc == '') {
         owo.tool.toast('无对应数据，请重试!')
-        owo.go('page1', 'scaleDown', 'moveFromLeft', 'scaleDown', 'moveFromRight', true)
+        setTimeout(() => {
+          owo.go('page1', 'scaleDown', 'moveFromLeft', 'scaleDown', 'moveFromRight', true)
+        }, 0)
+        
       }
     },
     gohome: function () {
@@ -49,12 +52,12 @@ img {
 }
 .backhome {
   width: 42vw;
-  height: 15vw;
+  height: 17vw;
   background-repeat: no-repeat;
   background-size: 100%;
   background-image: url('@|backhome.png|');
   position: absolute;
-  bottom: 7vw;
-  right: 4%;
+  bottom: 5vw;
+  right: 2%;
 }
 </style>

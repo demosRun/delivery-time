@@ -179,7 +179,9 @@ owo.script = {
 
       if (imageSrc == '') {
         owo.tool.toast('无对应数据，请重试!');
-        owo.go('page1', 'scaleDown', 'moveFromLeft', 'scaleDown', 'moveFromRight', true);
+        setTimeout(function () {
+          owo.go('page1', 'scaleDown', 'moveFromLeft', 'scaleDown', 'moveFromRight', true);
+        }, 0);
       }
     },
     "gohome": function gohome() {

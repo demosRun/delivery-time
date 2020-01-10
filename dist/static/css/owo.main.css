@@ -258,13 +258,13 @@ li {
 
 .page2 .backhome {
   width: 42vw;
-  height: 15vw;
+  height: 17vw;
   background-repeat: no-repeat;
   background-size: 100%;
   background-image: url('../resource/backhome.png');
   position: absolute;
-  bottom: 7vw;
-  right: 4%;
+  bottom: 5vw;
+  right: 2%;
 }
 /* 页面切换动画 */
 .o-page-scaleDown {
